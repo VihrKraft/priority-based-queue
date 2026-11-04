@@ -1,0 +1,135 @@
+@import url('https://googleapis.com');
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input, select, textarea, button {
+  font-family: inherit;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(0deg, rgb(160, 160, 160) 0%, rgb(207, 207, 207) 100%);
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.App {
+  width: 800px;
+  min-height: 600px;
+  padding: 40px 0; // Добавлен внутренний отступ сверху и снизу вместо <br/>
+  background-color: rgb(223, 223, 223);
+  border-radius: 30px;
+  border: 2px groove white;
+  box-shadow: 0 2px 3px gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+
+  &-el {
+    width: 60%;
+    font-size: 16pt;
+    margin-top: 15px; // Увеличен отступ для читаемости
+    padding: 10px;    // Более комфортные внутренние отступы
+    border-radius: 10px;
+    border: 1px solid rgb(180, 180, 180);
+    outline: none;
+    background-color: white;
+
+    &:focus {
+      border-color: rgb(100, 100, 100);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &-title {
+    text-align: center;
+    font-size: 20pt;
+    font-weight: bold;
+    border: none;
+    background: none;
+    margin-top: 0;
+  }
+
+  &-students {
+    @extend .form-el;
+
+    &-el {
+      font-size: 14pt;
+    }
+  }
+
+  // Добавлен класс для поля ввода номера лабораторной
+  &-work-num {
+    @extend .form-el;
+    
+    &::placeholder {
+      color: rgb(150, 150, 150);
+      font-size: 13pt;
+    }
+  }
+
+  &-but {
+    @extend .form-el; // Наследует общие свойства полей
+    width: 200px;
+    margin-top: 25px;
+    background-color: rgb(100, 100, 100);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgb(80, 80, 80);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+
+// Добавлены стили для компонента Queue
+.queue-list {
+  width: 60%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &-item {
+    font-size: 16pt;
+    padding: 12px 20px;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid rgb(200, 200, 200);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // Стилизация под черновик — можно нумеровать через css-счетчики или выводить как есть
+    &:first-child {
+      border-left: 5px solid rgb(100, 100, 100); // Выделение первого в очереди
+      font-weight: bold;
+    }
+  }
+}
