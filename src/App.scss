@@ -43,6 +43,7 @@ html, body {
   flex-direction: column;
   width: 100%;
   align-items: center;
+  position: relative;
 
   &-el {
     width: 60%;
@@ -71,6 +72,11 @@ html, body {
 
   &-students {
     @extend .form-el;
+    max-height: 100px; 
+    overflow-y: auto; 
+    overflow-x: hidden; 
+    border: 1px solid #ccc;
+    padding: 8px;
 
     &-el {
       font-size: 14pt;

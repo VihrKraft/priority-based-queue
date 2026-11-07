@@ -1,14 +1,13 @@
-export const AddingField = () => {
+export const AddingField = ({ students, labWorkNum, setLabWorkNum }) => {
   return(
   <form className="form">
     <label htmlFor="" className="form-el form-title">Встать в очередь</label>
     <select name="students" className="form-el form-students">
-      <option value="" className="form-students-el">Нефедов</option>
-      <option value="" className="form-students-el">Нефедов</option>
-      <option value="" className="form-students-el">Нефедов</option>
-      <option value="" className="form-students-el">Нефедов</option>
+      {students.map((student, id) => (
+        <option className="form-students-el" key={id}>{student}</option>
+      ))}
     </select>
-    <input className="form-el form-work-num" type="number" placeholder="Номер сдаваемой лабораторной работы"/>
+    <input className="form-el form-work-num" type="number" value={labWorkNum} min="0" onChange={(e) => setLabWorkNum(e.target.value)} placeholder="Номер сдаваемой лабораторной работы"/>
     <button className="form-el form-but">Отправить</button>
   </form>
   )
