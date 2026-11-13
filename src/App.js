@@ -138,7 +138,7 @@ function App() {
     return students.filter(student => 
       !queue.some(queueItem => queueItem.student_id === student.id) || student.id === savedID
     )
-  }, [students, queue, curStudentID])
+  }, [students, queue])
 
   const isStudentAlreadyInQueue = !!localStorage.getItem('my_student_id') && queue.some(queuer => queuer.student_id === curStudentID);
 
