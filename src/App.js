@@ -104,7 +104,7 @@ function App() {
           }])
           .select()
 
-        if (queueError) throw queueError
+        if (queueError) throw new Error('студент не выбран')
 
         setQueue(prev => [...prev, ...queueData])
         localStorage.setItem('my_student_id', curStudentID);
