@@ -9,7 +9,7 @@ export const AddingField = ({ students, labWorkNum, setLabWorkNum, changeQueue, 
       })}
     </select>
     <input disabled={isStudentAlreadyInQueue} className="form-el form-work-num" type="number" value={labWorkNum} min="0" onFocus={(e) => e.target.select()} onChange={(e) => setLabWorkNum(e.target.value)} placeholder="Номер сдаваемой лабораторной работы"/>
-    <button className="form-el form-but">Отправить</button>
+    <button disabled={isStudentAlreadyInQueue} className="form-el form-but">Отправить</button>
   </form>
   )
 }
