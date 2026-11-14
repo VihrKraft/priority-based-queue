@@ -27,7 +27,7 @@ html, body {
 }
 
 .App {
-  width: 800px;
+  width: 60vw;
   min-height: 600px;
   margin-top: 30px;
   padding: 40px 0;
@@ -159,4 +159,26 @@ html, body {
     padding: 4px;
     cursor: pointer;
   }
+}
+
+
+@media (max-width: 768px) {
+    .App {
+      transform: scale(80%);
+      width: 90vw;
+    }
+}
+
+@media (max-width: 425px) {
+    .App {
+      transform: scale(70%);
+      width: 95vw;
+    }
+}
+
+@media (max-width: 375px) {
+    .App {
+      transform: scale(60%);
+      width: 97vw;
+    }
 }
