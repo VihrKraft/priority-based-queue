@@ -126,7 +126,6 @@ function App() {
 
       setQueue(prev => prev.filter(queuer => queuer.student_id !== curStudentID))
       localStorage.removeItem('my_student_id');
-      setCurStudentID('')
 
     } catch (err) {
       alert(`Ошибка при удалении: ${err.message}`)
